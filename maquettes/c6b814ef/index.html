@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="La Braise Douce, un bistrot fictif à Alès. Une démonstration de site vitrine par Nova Web.">
+<meta name="theme-color" content="#261611">
+<title>La Braise Douce · Bistrot de feu à Alès | Démo Nova Web</title>
+<style>
+:root{--coal:#261611;--cream:#fcf2dc;--paper:#f3dfb8;--brick:#a43422;--rust:#ea6a46;--sage:#e7e8d4;--line:#9e7c66;--max:1260px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:5rem}
+body{margin:0;background:var(--cream);color:var(--coal);font:1rem/1.58 system-ui,sans-serif}
+a{color:inherit;text-underline-offset:.24em}
+button{font:inherit}
+img{display:block;width:100%;height:100%;object-fit:cover}
+svg{vertical-align:middle}
+:focus-visible{outline:3px solid #228176;outline-offset:5px}
+.skip{position:absolute;left:1rem;top:-10rem;z-index:10;background:#fff;color:#222;padding:.6rem}.skip:focus{top:1rem}
+.skin{width:min(var(--max),calc(100% - 6rem));margin-inline:auto}
+.label{font-size:.85rem;line-height:1.35;font-weight:760;letter-spacing:.13em;text-transform:uppercase;margin:0 0 1rem}
+.tag{display:inline-flex;align-items:center;gap:.65rem}.tag:before{content:'';display:block;height:1px;width:2rem;background:currentColor}
+h1,h2,h3, .wordmark{font-family:Georgia,'Times New Roman',serif;font-weight:400;letter-spacing:-.05em;margin:0;line-height:.97}
+h2{font-size:clamp(2.65rem,6vw,6.1rem)}
+em{font-weight:400}
+.strap{background:#1b100d;color:#f2d6aa;text-align:center;padding:.48rem 1rem;font-size:.82rem;letter-spacing:.04em}
+.top{background:var(--coal);color:var(--cream)}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:1rem;min-height:5.2rem;border-bottom:1px solid #725548}
+.wordmark{text-decoration:none;font-size:1.75rem;white-space:nowrap}
+.navlinks{display:flex;align-items:center;gap:1.75rem}
+.navlinks a:not(.btn){text-decoration:none;font-size:.94rem}.navlinks a:not(.btn):hover{text-decoration:underline}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:3rem;padding:.65rem 1.12rem;text-decoration:none;font-weight:720;border:1px solid transparent;cursor:pointer;transition:background .18s,color .18s}
+.btn-hot{background:var(--rust);color:#271610}.btn-hot:hover{background:#ff9879}
+.btn-line{border-color:currentColor;color:inherit;background:transparent}.btn-line:hover{background:#f1d9ba24}
+.hero{display:grid;grid-template-columns:1fr 1.07fr;align-items:center;gap:clamp(1.5rem,4vw,4.8rem);padding-block:clamp(2.4rem,5vw,5.5rem) 2.4rem}
+.hero .label{color:#f5bd91}
+.hero h1{font-size:clamp(4rem,8.65vw,8rem);line-height:.85;white-space:nowrap}
+.hero h1 em{color:#f09a70;display:block}
+.hero p:not(.label){max-width:34ch;color:#f4dec7;font-size:clamp(1rem,1.3vw,1.18rem);margin:1.6rem 0}
+.actions{display:flex;flex-wrap:wrap;gap:.7rem}
+.hero figure{position:relative;margin:0;border:1px solid #96664f;padding:8px;min-width:0}
+.hero figure img{height:clamp(330px,39vw,560px);object-position:57% 50%;background:#592711}
+.hero figcaption{position:absolute;right:8px;bottom:8px;padding:.28rem .54rem;background:#271610;color:#fff0d2;font-size:.75rem}
+.strip{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.7rem;color:#e3bfa4;border-top:1px solid #725548;padding:1rem 0 1.35rem;font-weight:650;letter-spacing:.06em;font-size:.83rem}
+.block{padding-block:clamp(3rem,7vw,7rem)}
+.story{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2rem,8vw,8rem);align-items:end}
+.story h2 em,.menu h2 em{color:var(--brick)}
+.story p:not(.label),.menu-intro p:not(.label){font-size:1.13rem;max-width:46ch}
+.story .detail{border-left:2px solid var(--brick);padding-left:1.2rem;margin-top:1.5rem;color:#69382c;font-style:italic}
+.menu{background:var(--paper);border-top:1px solid #c7a987;border-bottom:1px solid #c7a987}
+.menu-layout{display:grid;grid-template-columns:.7fr 1.3fr;gap:clamp(2rem,7vw,7rem);align-items:start}
+.menu h2{font-size:clamp(3rem,6vw,5.8rem)}
+.list{border-top:1px solid var(--line)}
+details{border-bottom:1px solid var(--line);padding:.2rem 0}
+summary{list-style:none;display:flex;align-items:center;gap:1rem;min-height:4.45rem;padding:.4rem .45rem;cursor:pointer}summary::-webkit-details-marker{display:none}
+summary:hover{background:#e8cca0}
+summary strong{font-family:Georgia,serif;line-height:1.08;font-size:clamp(1.3rem,2vw,1.65rem);font-weight:400}
+summary span:first-child{font-size:.82rem;color:#694436;font-weight:750;text-transform:uppercase;letter-spacing:.07em;min-width:5rem}
+summary span:last-child{margin-left:auto;font-size:1.5rem;line-height:1}
+details[open] summary span:last-child{transform:rotate(45deg)}
+details p{margin:0 2.1rem 1.15rem .45rem;max-width:55ch}
+.interlude{background:var(--brick);color:var(--cream);text-align:center;padding-block:clamp(3.4rem,7vw,6rem)}
+.interlude svg{width:3rem;height:3rem;margin-bottom:.9rem;stroke:#ffc18f}
+.interlude h2{font-size:clamp(2.75rem,6vw,5.8rem);line-height:.98}
+.interlude p:not(.label){max-width:47ch;margin:1.25rem auto 0;color:#ffedce}
+.visit{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,6vw,5rem);align-items:start}
+.visit h2{font-size:clamp(2.9rem,6vw,5.8rem)}
+.visit dl{margin:0;border-top:1px solid var(--line)}
+.visit dl div{padding:.78rem 0;border-bottom:1px solid var(--line)}
+dt{font-weight:760}dd{margin:.15rem 0 0}
+.visit .btn{margin-top:.8rem}
+footer{background:var(--coal);color:var(--cream);padding:2rem 0}
+.foot{display:flex;gap:1rem;justify-content:space-between;align-items:center;flex-wrap:wrap}
+.foot p{margin:0;font-size:.87rem;color:#efcfb1}
+dialog{width:min(440px,calc(100% - 2rem));padding:2rem;background:var(--cream);color:var(--coal);border:1px solid var(--brick)}
+dialog::backdrop{background:#1b100dbd}dialog h2{font-size:2.4rem}dialog p{margin:1rem 0}
+@media(max-width:850px){.skin{width:calc(100% - 3rem)}.hero{gap:1.4rem}.hero h1{font-size:clamp(3.4rem,9vw,5.2rem)}.hero figure img{height:370px}.navlinks{gap:.85rem}.story,.menu-layout,.visit{gap:2rem}}
+@media(max-width:650px){.skin{width:calc(100% - 2rem)}.nav{min-height:4.2rem}.wordmark{font-size:1.45rem}.navlinks a:not(.btn){display:none}.nav .btn{min-height:2.75rem;padding:.45rem .65rem;font-size:.88rem}.hero,.story,.menu-layout,.visit{grid-template-columns:1fr}.hero{padding-top:2.25rem}.hero h1{font-size:clamp(3.3rem,14vw,5.1rem)}.hero p:not(.label){margin:1.05rem 0 1.25rem}.hero figure img{height:clamp(210px,65vw,340px)}.block{padding-block:3.4rem}.story p:not(.label),.menu-intro p:not(.label){font-size:1.04rem}.strip{justify-content:flex-start;column-gap:1.2rem}.visit{gap:1.2rem}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<a href="#contenu" class="skip">Aller au contenu</a>
+<div class="strap">Démonstration Nova Web · Restaurant fictif</div>
+<header class="top">
+<nav class="nav skin" aria-label="Navigation principale">
+<a class="wordmark" href="#" aria-label="La Braise Douce, accueil">La Braise Douce</a>
+<div class="navlinks"><a href="#esprit">L’esprit</a><a href="#carte">La carte</a><a href="#infos">Infos pratiques</a><button type="button" class="btn btn-hot" data-reserve>Réserver · démo</button></div>
+</nav>
+</header>
+<main id="contenu">
+<section class="top" aria-labelledby="titre">
+<div class="hero skin">
+<div>
+<p class="label tag">Bistrot de feu · Alès, Gard</p>
+<h1 id="titre">La Braise <em>Douce.</em></h1>
+<p>Le goût du feu dans l’assiette. Des légumes rôtis, des jus qu’on sauce et une table où l’on prend le temps.</p>
+<div class="actions"><a class="btn btn-hot" href="#carte">Découvrir la carte</a><a class="btn btn-line" href="#infos">Infos pratiques</a></div>
+</div>
+<figure><img src="braise.webp" width="1200" height="800" alt="Volaille grillée et légumes rôtis sur une assiette bleu pétrole" fetchpriority="high"><figcaption>Illustration d’ambiance</figcaption></figure>
+</div>
+<div class="strip skin"><span>CUISINE À LA BRAISE</span><span>TABLE DE BISTROT</span><span>ALÈS · CÉVENNES</span></div>
+</section>
+<section id="esprit" class="block">
+<div class="story skin">
+<div><p class="label tag">L’esprit de la maison</p><h2>Le feu vif.<br><em>La table tranquille.</em></h2></div>
+<div><p>La braise donne la note fumée. Le citron, les herbes fraîches et le vinaigre lui répondent. À table, on commence par partager les légumes rôtis, puis chacun choisit son plat.</p><p class="detail">Une idée de bistrot pour les soirs où le dîner fait toute la soirée.</p></div>
+</div>
+</section>
+<section id="carte" class="menu block">
+<div class="menu-layout skin">
+<div class="menu-intro"><p class="label tag">À table · Carte fictive</p><h2>Au goût<br><em>du feu.</em></h2><p>Une carte courte, de la première bouchée au dessert. Ouvre un plat pour voir sa composition.</p></div>
+<div class="list">
+<details open><summary><span>Entrée</span><strong>Poireaux à la flamme</strong><span aria-hidden="true">+</span></summary><p>Poireaux braisés, vinaigrette tiède à la moutarde et noisettes torréfiées.</p></details>
+<details><summary><span>Plat</span><strong>Volaille au jus de braise</strong><span aria-hidden="true">+</span></summary><p>Volaille à la peau croustillante, carottes rôties, jus réduit et persil frais.</p></details>
+<details><summary><span>Plat</span><strong>Chou-fleur rôti, citron confit</strong><span aria-hidden="true">+</span></summary><p>Chou-fleur bien doré, crème de pois chiches, citron confit et herbes fraîches.</p></details>
+<details><summary><span>Dessert</span><strong>Pomme chaude, crème crue</strong><span aria-hidden="true">+</span></summary><p>Pomme rôtie doucement, caramel au beurre salé et une cuillerée de crème crue.</p></details>
+</div>
+</div>
+</section>
+<section class="interlude" aria-labelledby="table-titre">
+<div class="skin">
+<svg viewBox="0 0 48 48" fill="none" stroke-width="1.7" aria-hidden="true"><path d="M24 4c3 10-8 11-2 21 2-4 6-5 7-10 8 7 10 14 5 21-6 9-20 8-24-2-3-7 0-13 5-18 0 5 2 7 3 8-1-9 5-12 6-20Z" stroke-linejoin="round"/></svg>
+<h2 id="table-titre">On s’attarde <em>à table.</em></h2>
+<p>Des plats à partager, du pain pour saucer et une dernière bouchée qu’on hésite à laisser.</p>
+</div>
+</section>
+<section id="infos" class="block">
+<div class="visit skin">
+<div><p class="label tag">Infos pratiques</p><h2>Rendez-vous<br>à <em>Alès.</em></h2><p>La Braise Douce est un concept fictif créé pour montrer le rendu d’un site Nova Web.</p><button class="btn btn-hot" type="button" data-reserve>Tester le bouton Réserver</button></div>
+<dl><div><dt>Localisation</dt><dd>Alès, Gard (30). Pas d’établissement réel.</dd></div><div><dt>Adresse et téléphone</dt><dd>Non affichés pour cette démo. Sur un vrai site, les coordonnées vérifiées et le bouton Itinéraire figurent ici.</dd></div><div><dt>Réservation</dt><dd>Aucune demande n’est envoyée.</dd></div></dl>
+</div>
+</section>
+</main>
+<footer><div class="foot skin"><a class="wordmark" href="#">La Braise Douce</a><p>Maquette Nova Web · Restaurant fictif · Aucun service de réservation</p></div></footer>
+<dialog id="reservation" aria-labelledby="reservation-titre"><h2 id="reservation-titre">Réservation de démo</h2><p>Ce restaurant est fictif. Aucune réservation n’est possible et aucune donnée n’est demandée.</p><form method="dialog"><button class="btn btn-hot" autofocus>Fermer</button></form></dialog>
+<script>
+const reservation=document.getElementById('reservation');
+document.querySelectorAll('[data-reserve]').forEach(button=>button.addEventListener('click',()=>reservation.showModal()));
+</script>
+</body>
+</html>
